@@ -1,0 +1,13 @@
+\section{Introduction}
+Glance(\url{https://glance.com}) is a content delivery platform, serving more than 200 million daily active users across Android lock screens. Content pieces can be of both the types, long-living (evergreen) and short-lived (ephemeral). With the primary interface eschewing discoverability in favor of a more organic experience, personalization plays a critical role.  
+
+A key component driving personalization systems is user interactions. Cold users are users who have just entered our system. Sparse users have had some, sparse, interactions with our system. For both these kinds of users, interactions cannot be depended upon for personalizing the content. It is just not a rich enough source of data yet. Thus, the personalization problem can be split into two parts, to be tackled differently:    
+
+\begin{itemize}
+\item when we have enough user interactions to drive our models, we call them Dense users,
+\item and when we do not have enough user interactions, we call them Sparse users
+\end{itemize}
+
+Sparse users are important, after all every user was once a sparse user. For them, the goal of a personalization system is twofold – get them engaged enough so a dense user model can take over and “explore” enough content identify the user’s interests. Exploration here means to serve a variety of content to the users to gauge their preference. Once the interests are established, we can “exploit” this preference to serve content to the user, which they are more likely to enjoy and engage with. 
+
+In this paper we present a methodology to recommend content to sparse users. We will start by defining the problem statement and the unique constraints associated with it. We will walk through the initial analysis that led to the hypothesis, the implementation specification, the experimental setup and our empirical results. The implementation details will focus on shaping a solution from our preliminary analysis and building a low latency prediction service. Finally, we will revisit the problem statement to see where we go from here. 

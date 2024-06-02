@@ -1,0 +1,11 @@
+\section{Background}
+The content pieces we recommend at Glance are called Glances, grouped together in contextual bundles called Bubbles. They cover a lot of categories – sports, fashion, entertainment, etc. – and a variety of languages. It could be in the form of a video, article or just a tweet. Each Bubble is associated with a category, as defined by the editor and moderators who publish the content. 
+
+Cold users are users who have just entered our system. Sparse users have had some, sparse, interactions with our system. For both these kinds of users, interactions cannot be depended upon for personalizing the content. It is just not a rich enough source of data. Users stay on a system because the content is constantly engaging. At Glance, a separate analysis showed that users for whom we serve content closest to the categories they like, interact the most. So, the cold-start problem for us can be simplified to identifying the category affinity of the user and leveraging it in personalization. 
+
+But we do not have the interactions of these users, not yet. 
+
+What we do have is a low cardinality user feature space: user demographics like gender and tier of city, device specifications like price and screen resolution and one rich meta feature: category preference information – details about the kind of content a user wants to see – on their device. This category preference is collected as part of the onboarding process. 
+
+Our solution approach is to build a lookalike model based on the following idea: there are clusters of users who exhibit similar interaction behaviors. With these clusters, we can leverage their group interactions to power our personalization system. These clusters will be identified among the Dense users, using the five user features mentioned above. We then tag a cold/sparse user to a cluster number and use the interaction characteristics of the cluster to rank the Bubbles for the user.  
+
